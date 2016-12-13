@@ -1,0 +1,17 @@
+---
+# tasks file for nexus-oss_win
+
+#Start by installing nexus oss from chocolatey
+#TODO: verify there is no running instance of nexus before installing the new package
+- name: Ensure Java is installed
+  win_chocolatey:
+     name: jre8
+     state: present
+     
+- name: Install nexus package 
+  win_chocolatey:
+     name: nexus-repository
+     state: present
+
+#TODO: setup port and repo folder
+
